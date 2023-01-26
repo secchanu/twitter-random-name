@@ -1,0 +1,41 @@
+{
+	"name": "twitter-random-name",
+	"version": "2.0.2",
+	"description": "",
+	"license": "MIT",
+	"author": "secchanu",
+	"scripts": {
+		"start": "node dist/index.js",
+		"build": "tsc",
+		"clean": "del-cli dist",
+		"dev": "ts-node --files src/index.ts",
+		"format": "run-s format:prettier format:sort-package-json",
+		"format:prettier": "prettier \"**/*.{ts,tsx,json,html,yml,css,scss,md}\" --check --write",
+		"format:sort-package-json": "sort-package-json",
+		"test": "run-s test:lint test:prettier test:types",
+		"test:lint": "eslint --ext .ts .",
+		"test:prettier": "prettier \"**/*.{ts,tsx,json,html,yml,css,scss,md}\" --check",
+		"test:types": "tsc -b",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"cron": "^2.2.0",
+		"dotenv": "^16.0.3",
+		"twitter-api-v2": "^1.14.0"
+	},
+	"devDependencies": {
+		"@types/cron": "^2.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.49.0",
+		"@typescript-eslint/parser": "^5.49.0",
+		"del-cli": "^5.0.0",
+		"eslint": "^8.32.0",
+		"eslint-config-prettier": "^8.6.0",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "2.8.3",
+		"sort-package-json": "^2.2.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^4.9.4"
+	}
+}
